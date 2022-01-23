@@ -1,0 +1,947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C4A1FD6-B22E-4EB0-8B5D-21A049735E16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>cenCommonUIapps</RootNamespace>
+    <AssemblyName>cenCommonUIapps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="coreBase">
+      <HintPath>..\..\cenCore\Outputs\coreBase.dll</HintPath>
+    </Reference>
+    <Reference Include="coreBUS">
+      <HintPath>..\..\cenCore\Outputs\coreBUS.dll</HintPath>
+    </Reference>
+    <Reference Include="coreCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cenCore\Outputs\coreCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="coreControls">
+      <HintPath>..\..\cenCORE\Outputs\coreControls.dll</HintPath>
+    </Reference>
+    <Reference Include="coreDAO">
+      <HintPath>..\..\cenCore\Outputs\coreDAO.dll</HintPath>
+    </Reference>
+    <Reference Include="coreDTO">
+      <HintPath>..\..\cenCore\Outputs\coreDTO.dll</HintPath>
+    </Reference>
+    <Reference Include="coreUI">
+      <HintPath>..\..\cenCore\Outputs\coreUI.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\NPOI\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinCalcManager.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinListView.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Shared.v18.1, Version=18.1.20181.88, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="NPOI">
+      <HintPath>..\..\NPOI\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\NPOI\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\NPOI\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\NPOI\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bin\Debug\Reports\ctDeNghiThanhToanTamUngGuiKH.cs">
+      <DependentUpon>ctDeNghiThanhToanTamUngGuiKH.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\ctDeNghiThanhToanHoanUng.cs">
+      <DependentUpon>ctDeNghiThanhToanHoanUng.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\ctGiayBienNhan.cs">
+      <DependentUpon>ctGiayBienNhan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\ctDeNghiThanhToanTamUng.cs">
+      <DependentUpon>ctDeNghiThanhToanTamUng.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\ctGiayDeNghiTamUngCK.cs">
+      <DependentUpon>ctGiayDeNghiTamUngCK.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\ctGiayDeNghiTamUng.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ctGiayDeNghiTamUng.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\ctInGiayVanTai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ctInGiayVanTai.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\ctYeuCauVanChuyen.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ctYeuCauVanChuyen.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cenCommonUIapps.cs" />
+    <Compile Include="cenLogistics\Forms\frmDanhMucDiaDiemGiaoNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDiaDiemGiaoNhan.Designer.cs">
+      <DependentUpon>frmDanhMucDiaDiemGiaoNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDiaDiemGiaoNhanUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDiaDiemGiaoNhanUpdate.designer.cs">
+      <DependentUpon>frmDanhMucDiaDiemGiaoNhanUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHangPhanCapUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHangPhanCapUpdate.designer.cs">
+      <DependentUpon>frmDanhMucKhachHangPhanCapUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTaiXeValid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTaiXeValid.Designer.cs">
+      <DependentUpon>frmDanhMucTaiXeValid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiValidSoDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiValidSoDonHang.Designer.cs">
+      <DependentUpon>frm_ctChiPhiVanTaiValidSoDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHangCoTamUngUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHangCoTamUngUpdate.Designer.cs">
+      <DependentUpon>frm_ctDonHangCoTamUngUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctTamUng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctTamUng.Designer.cs">
+      <DependentUpon>frm_ctTamUng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctTamUngUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctTamUngUpdate.Designer.cs">
+      <DependentUpon>frm_ctTamUngUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctPhieuDoNhienLieuUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctPhieuDoNhienLieuUpdate.Designer.cs">
+      <DependentUpon>frm_ctPhieuDoNhienLieuUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctPhieuDoNhienLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctPhieuDoNhienLieu.Designer.cs">
+      <DependentUpon>frm_ctPhieuDoNhienLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHangValidDebitNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHangValidDebitNote.Designer.cs">
+      <DependentUpon>frm_ctDonHangValidDebitNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucThauPhuValid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucThauPhuValid.Designer.cs">
+      <DependentUpon>frmDanhMucThauPhuValid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucThauPhuUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucThauPhuUpdate.designer.cs">
+      <DependentUpon>frmDanhMucThauPhuUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucThauPhu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucThauPhu.designer.cs">
+      <DependentUpon>frmDanhMucThauPhu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeValid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeValid.Designer.cs">
+      <DependentUpon>frmDanhMucXeValid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeDinhMucNhienLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeDinhMucNhienLieu.designer.cs">
+      <DependentUpon>frmDanhMucXeDinhMucNhienLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhi.designer.cs">
+      <DependentUpon>frmDanhMucDinhMucChiPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeDinhMucNhienLieuUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeDinhMucNhienLieuUpdate.designer.cs">
+      <DependentUpon>frmDanhMucXeDinhMucNhienLieuUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiUpdate.designer.cs">
+      <DependentUpon>frmDanhMucDinhMucChiPhiUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiHaiQuanUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiHaiQuanUpdate.designer.cs">
+      <DependentUpon>frmDanhMucDinhMucChiPhiHaiQuanUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiHaiQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiHaiQuan.designer.cs">
+      <DependentUpon>frmDanhMucDinhMucChiPhiHaiQuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucHangHoaValid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucHangHoaValid.Designer.cs">
+      <DependentUpon>frmDanhMucHangHoaValid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiValid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiValid.Designer.cs">
+      <DependentUpon>frmDanhMucTuyenVanTaiValid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHangValid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHangValid.Designer.cs">
+      <DependentUpon>frmDanhMucKhachHangValid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucMooc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucMooc.designer.cs">
+      <DependentUpon>frmDanhMucMooc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucGiaNhienLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucGiaNhienLieu.designer.cs">
+      <DependentUpon>frmDanhMucGiaNhienLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucHangHoaUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucHangHoaUpdate.designer.cs">
+      <DependentUpon>frmDanhMucHangHoaUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucHangHoa.designer.cs">
+      <DependentUpon>frmDanhMucHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiDinhMucChiPhiUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiDinhMucChiPhiUpdate.designer.cs">
+      <DependentUpon>frmDanhMucTuyenVanTaiDinhMucChiPhiUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucGiaNhienLieuUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucGiaNhienLieuUpdate.designer.cs">
+      <DependentUpon>frmDanhMucGiaNhienLieuUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiDinhMucNhienLieuUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiDinhMucNhienLieuUpdate.designer.cs">
+      <DependentUpon>frmDanhMucTuyenVanTaiDinhMucNhienLieuUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiUpdate.designer.cs">
+      <DependentUpon>frmDanhMucTuyenVanTaiUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTaiXeUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTaiXeUpdate.designer.cs">
+      <DependentUpon>frmDanhMucTaiXeUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTaiXe.Designer.cs">
+      <DependentUpon>frmDanhMucTaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucTuyenVanTai.Designer.cs">
+      <DependentUpon>frmDanhMucTuyenVanTai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucMoocUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucMoocUpdate.designer.cs">
+      <DependentUpon>frmDanhMucMoocUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXeUpdate.designer.cs">
+      <DependentUpon>frmDanhMucXeUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucNhanSuValid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucNhanSuValid.Designer.cs">
+      <DependentUpon>frmDanhMucNhanSuValid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHang.designer.cs">
+      <DependentUpon>frmDanhMucKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHangUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucKhachHangUpdate.designer.cs">
+      <DependentUpon>frmDanhMucKhachHangUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucNhanSuUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucNhanSuUpdate.designer.cs">
+      <DependentUpon>frmDanhMucNhanSuUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucNhanSu.designer.cs">
+      <DependentUpon>frmDanhMucNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmDanhMucXe.Designer.cs">
+      <DependentUpon>frmDanhMucXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmImageViewer.Designer.cs">
+      <DependentUpon>frmImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmWorkingInProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frmWorkingInProgress.Designer.cs">
+      <DependentUpon>frmWorkingInProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDieuHanhChiTietDonHangKetHopUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDieuHanhChiTietDonHangKetHopUpdate.Designer.cs">
+      <DependentUpon>frm_ctDieuHanhChiTietDonHangKetHopUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHangUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHangUpdate.Designer.cs">
+      <DependentUpon>frm_ctDonHangUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctThanhToanTamUng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctThanhToanTamUng.Designer.cs">
+      <DependentUpon>frm_ctThanhToanTamUng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDonHang.Designer.cs">
+      <DependentUpon>frm_ctDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctInGiayVanTaiUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctInGiayVanTaiUpdate.Designer.cs">
+      <DependentUpon>frm_ctInGiayVanTaiUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctInGiayVanTai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctInGiayVanTai.Designer.cs">
+      <DependentUpon>frm_ctInGiayVanTai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctHotlineUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctHotlineUpdate.Designer.cs">
+      <DependentUpon>frm_ctHotlineUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctHotline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctHotline.Designer.cs">
+      <DependentUpon>frm_ctHotline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDieuHanhUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDieuHanhUpdate.Designer.cs">
+      <DependentUpon>frm_ctDieuHanhUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDieuHanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctDieuHanh.Designer.cs">
+      <DependentUpon>frm_ctDieuHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiBoSung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiBoSung.Designer.cs">
+      <DependentUpon>frm_ctChiPhiVanTaiBoSung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChotChiPhiVanTaiBoSungGuiKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChotChiPhiVanTaiBoSungGuiKeToan.Designer.cs">
+      <DependentUpon>frm_ctChotChiPhiVanTaiBoSungGuiKeToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChotChiPhiVanTaiGuiKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChotChiPhiVanTaiGuiKeToan.Designer.cs">
+      <DependentUpon>frm_ctChotChiPhiVanTaiGuiKeToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChotDoanhThuGuiKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChotDoanhThuGuiKeToan.Designer.cs">
+      <DependentUpon>frm_ctChotDoanhThuGuiKeToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTai.Designer.cs">
+      <DependentUpon>frm_ctChiPhiVanTai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiUpdate.Designer.cs">
+      <DependentUpon>frm_ctChiPhiVanTaiUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctSuaChuaUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctSuaChuaUpdate.Designer.cs">
+      <DependentUpon>frm_ctSuaChuaUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctSuaChua.Designer.cs">
+      <DependentUpon>frm_ctSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiBoSungUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctChiPhiVanTaiBoSungUpdate.Designer.cs">
+      <DependentUpon>frm_ctChiPhiVanTaiBoSungUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctThanhToanTamUngUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctThanhToanTamUngUpdate.Designer.cs">
+      <DependentUpon>frm_ctThanhToanTamUngUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctKeHoachVanTaiUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cenLogistics\Forms\frm_ctKeHoachVanTaiUpdate.Designer.cs">
+      <DependentUpon>frm_ctKeHoachVanTaiUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsChungTu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports.cs" />
+    <EmbeddedResource Include="bin\Debug\Reports\ctDeNghiThanhToanTamUngGuiKH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctDeNghiThanhToanTamUngGuiKH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\ctDeNghiThanhToanHoanUng.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctDeNghiThanhToanHoanUng.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\ctGiayBienNhan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctGiayBienNhan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\ctDeNghiThanhToanTamUng.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctDeNghiThanhToanTamUng.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\ctGiayDeNghiTamUngCK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctGiayDeNghiTamUngCK.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\ctGiayDeNghiTamUng.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctGiayDeNghiTamUng.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\ctInGiayVanTai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctInGiayVanTai.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\ctYeuCauVanChuyen.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctYeuCauVanChuyen.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucDiaDiemGiaoNhan.resx">
+      <DependentUpon>frmDanhMucDiaDiemGiaoNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucDiaDiemGiaoNhanUpdate.resx">
+      <DependentUpon>frmDanhMucDiaDiemGiaoNhanUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucKhachHangPhanCapUpdate.resx">
+      <DependentUpon>frmDanhMucKhachHangPhanCapUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTaiXeValid.resx">
+      <DependentUpon>frmDanhMucTaiXeValid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChiPhiVanTaiValidSoDonHang.resx">
+      <DependentUpon>frm_ctChiPhiVanTaiValidSoDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctDonHangCoTamUngUpdate.resx">
+      <DependentUpon>frm_ctDonHangCoTamUngUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctTamUng.resx">
+      <DependentUpon>frm_ctTamUng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctTamUngUpdate.resx">
+      <DependentUpon>frm_ctTamUngUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctPhieuDoNhienLieuUpdate.resx">
+      <DependentUpon>frm_ctPhieuDoNhienLieuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctPhieuDoNhienLieu.resx">
+      <DependentUpon>frm_ctPhieuDoNhienLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctDonHangValidDebitNote.resx">
+      <DependentUpon>frm_ctDonHangValidDebitNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucThauPhuValid.resx">
+      <DependentUpon>frmDanhMucThauPhuValid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucThauPhuUpdate.resx">
+      <DependentUpon>frmDanhMucThauPhuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucThauPhu.resx">
+      <DependentUpon>frmDanhMucThauPhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucXeValid.resx">
+      <DependentUpon>frmDanhMucXeValid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucXeDinhMucNhienLieu.resx">
+      <DependentUpon>frmDanhMucXeDinhMucNhienLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhi.resx">
+      <DependentUpon>frmDanhMucDinhMucChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucXeDinhMucNhienLieuUpdate.resx">
+      <DependentUpon>frmDanhMucXeDinhMucNhienLieuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiUpdate.resx">
+      <DependentUpon>frmDanhMucDinhMucChiPhiUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiHaiQuanUpdate.resx">
+      <DependentUpon>frmDanhMucDinhMucChiPhiHaiQuanUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucDinhMucChiPhiHaiQuan.resx">
+      <DependentUpon>frmDanhMucDinhMucChiPhiHaiQuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucHangHoaValid.resx">
+      <DependentUpon>frmDanhMucHangHoaValid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiValid.resx">
+      <DependentUpon>frmDanhMucTuyenVanTaiValid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucKhachHangValid.resx">
+      <DependentUpon>frmDanhMucKhachHangValid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucMooc.resx">
+      <DependentUpon>frmDanhMucMooc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucGiaNhienLieu.resx">
+      <DependentUpon>frmDanhMucGiaNhienLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucHangHoaUpdate.resx">
+      <DependentUpon>frmDanhMucHangHoaUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucHangHoa.resx">
+      <DependentUpon>frmDanhMucHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiDinhMucChiPhiUpdate.resx">
+      <DependentUpon>frmDanhMucTuyenVanTaiDinhMucChiPhiUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucGiaNhienLieuUpdate.resx">
+      <DependentUpon>frmDanhMucGiaNhienLieuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiDinhMucNhienLieuUpdate.resx">
+      <DependentUpon>frmDanhMucTuyenVanTaiDinhMucNhienLieuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTuyenVanTaiUpdate.resx">
+      <DependentUpon>frmDanhMucTuyenVanTaiUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTaiXeUpdate.resx">
+      <DependentUpon>frmDanhMucTaiXeUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTaiXe.resx">
+      <DependentUpon>frmDanhMucTaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucTuyenVanTai.resx">
+      <DependentUpon>frmDanhMucTuyenVanTai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucMoocUpdate.resx">
+      <DependentUpon>frmDanhMucMoocUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucXeUpdate.resx">
+      <DependentUpon>frmDanhMucXeUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucNhanSuValid.resx">
+      <DependentUpon>frmDanhMucNhanSuValid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucKhachHang.resx">
+      <DependentUpon>frmDanhMucKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucKhachHangUpdate.resx">
+      <DependentUpon>frmDanhMucKhachHangUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucNhanSuUpdate.resx">
+      <DependentUpon>frmDanhMucNhanSuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucNhanSu.resx">
+      <DependentUpon>frmDanhMucNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmDanhMucXe.resx">
+      <DependentUpon>frmDanhMucXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmImageViewer.resx">
+      <DependentUpon>frmImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frmWorkingInProgress.resx">
+      <DependentUpon>frmWorkingInProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctDieuHanhChiTietDonHangKetHopUpdate.resx">
+      <DependentUpon>frm_ctDieuHanhChiTietDonHangKetHopUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctDonHangUpdate.resx">
+      <DependentUpon>frm_ctDonHangUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctThanhToanTamUng.resx">
+      <DependentUpon>frm_ctThanhToanTamUng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctDonHang.resx">
+      <DependentUpon>frm_ctDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctInGiayVanTaiUpdate.resx">
+      <DependentUpon>frm_ctInGiayVanTaiUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctInGiayVanTai.resx">
+      <DependentUpon>frm_ctInGiayVanTai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctHotlineUpdate.resx">
+      <DependentUpon>frm_ctHotlineUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctHotline.resx">
+      <DependentUpon>frm_ctHotline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctDieuHanhUpdate.resx">
+      <DependentUpon>frm_ctDieuHanhUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctDieuHanh.resx">
+      <DependentUpon>frm_ctDieuHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChiPhiVanTaiBoSung.resx">
+      <DependentUpon>frm_ctChiPhiVanTaiBoSung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChotChiPhiVanTaiBoSungGuiKeToan.resx">
+      <DependentUpon>frm_ctChotChiPhiVanTaiBoSungGuiKeToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChotChiPhiVanTaiGuiKeToan.resx">
+      <DependentUpon>frm_ctChotChiPhiVanTaiGuiKeToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChotDoanhThuGuiKeToan.resx">
+      <DependentUpon>frm_ctChotDoanhThuGuiKeToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChiPhiVanTai.resx">
+      <DependentUpon>frm_ctChiPhiVanTai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChiPhiVanTaiUpdate.resx">
+      <DependentUpon>frm_ctChiPhiVanTaiUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctSuaChuaUpdate.resx">
+      <DependentUpon>frm_ctSuaChuaUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctSuaChua.resx">
+      <DependentUpon>frm_ctSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctChiPhiVanTaiBoSungUpdate.resx">
+      <DependentUpon>frm_ctChiPhiVanTaiBoSungUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctThanhToanTamUngUpdate.resx">
+      <DependentUpon>frm_ctThanhToanTamUngUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cenLogistics\Forms\frm_ctKeHoachVanTaiUpdate.resx">
+      <DependentUpon>frm_ctKeHoachVanTaiUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="bin\Debug\cenReportController.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AxShockwaveFlashObjects.dll" />
+    <Content Include="bin\Debug\cenBase.dll" />
+    <Content Include="bin\Debug\cenBase.pdb" />
+    <Content Include="bin\Debug\cenBUS.dll" />
+    <Content Include="bin\Debug\cenBUS.pdb" />
+    <Content Include="bin\Debug\cenCommon.dll" />
+    <Content Include="bin\Debug\cenCommon.pdb" />
+    <Content Include="bin\Debug\cenCommonUIapps.dll" />
+    <Content Include="bin\Debug\cenCommonUIapps.dll.CodeAnalysisLog.xml" />
+    <Content Include="bin\Debug\cenCommonUIapps.pdb" />
+    <Content Include="bin\Debug\cenControls.dll" />
+    <Content Include="bin\Debug\cenControls.pdb" />
+    <Content Include="bin\Debug\cenDAO.dll" />
+    <Content Include="bin\Debug\cenDAO.pdb" />
+    <Content Include="bin\Debug\cenDTO.dll" />
+    <Content Include="bin\Debug\cenDTO.pdb" />
+    <Content Include="bin\Debug\cenReportController.dll" />
+    <Content Include="bin\Debug\cenReportController.pdb" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportSource.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Windows.Forms.dll" />
+    <Content Include="bin\Debug\FlashControlV71.dll" />
+    <Content Include="bin\Debug\Infragistics4.Documents.Core.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Documents.Core.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Documents.Excel.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Documents.Excel.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Shared.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Shared.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.Misc.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.Misc.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinCalcManager.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinCalcManager.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinEditors.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinEditors.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinGrid.ExcelExport.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinGrid.ExcelExport.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinGrid.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinGrid.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinListView.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinListView.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinStatusBar.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinStatusBar.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinTabControl.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinTabControl.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinToolbars.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.UltraWinToolbars.v18.1.xml" />
+    <Content Include="bin\Debug\Infragistics4.Win.v18.1.dll" />
+    <Content Include="bin\Debug\Infragistics4.Win.v18.1.xml" />
+    <Content Include="bin\Debug\ShockwaveFlashObjects.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="cenLogistics\Scripts\ctDonHangCoTamUng.sql" />
+    <Content Include="cenLogistics\Scripts\ctPhieuDoNhienLieu.sql" />
+    <Content Include="cenLogistics\Scripts\ctDieuHanhChiTietDonHangKetHop.sql" />
+    <Content Include="cenLogistics\Scripts\001.ctKeHoachVanTai.sql" />
+    <Content Include="cenLogistics\Scripts\ctInGiayVanTai.sql" />
+    <Content Include="cenLogistics\Scripts\ctHotline.sql" />
+    <Content Include="cenLogistics\Scripts\ctDieuHanh.sql" />
+    <Content Include="cenLogistics\Scripts\ctSuaChua.sql" />
+    <Content Include="cenLogistics\Scripts\ctChiPhiVanTaiBoSung.sql" />
+    <Content Include="cenLogistics\Scripts\ctChiPhiVanTai.sql" />
+    <Content Include="cenLogistics\Scripts\ctChotChiPhiVanTaiBoSungGuiKeToan.sql" />
+    <Content Include="cenLogistics\Scripts\ctChotChiPhiVanTaiGuiKeToan.sql" />
+    <Content Include="cenLogistics\Scripts\ctChotDoanhThuGuiKeToan.sql" />
+    <Content Include="cenLogistics\Scripts\ctThanhToanTamUng.sql" />
+    <Content Include="cenLogistics\Scripts\ctDonHang.sql" />
+    <Content Include="cenLogistics\Scripts\ctHopDongVanChuyen.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucThauPhu.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucDiaDiemGiaoNhan.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucXeDinhMucNhienLieu.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucDinhMucChiPhi.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucDinhMucChiPhiHaiQuan.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucMooc.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucGiaNhienLieu.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucHangHoa.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucTuyenVanTai.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucTaiXe.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucXe.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucKhachHang.sql" />
+    <Content Include="cenLogistics\Scripts\DanhMucNhanSu.sql" />
+    <Content Include="cenLogistics\Scripts\Others.sql" />
+    <Content Include="cenLogistics\Scripts\Reports.sql" />
+    <None Include="Resources\CSV.png" />
+    <None Include="Resources\baocao.ico" />
+    <None Include="Resources\excel.ico" />
+    <None Include="Resources\112_Minus_Blue_16x16_72.png" />
+    <None Include="Resources\112_Plus_Blue_16x16_72.png" />
+    <None Include="Resources\Filter.png" />
+    <None Include="Resources\Copy.ico" />
+    <None Include="Resources\in.ico" />
+    <None Include="Resources\112_ArrowReturnLeft_Blue_16x16_72.png" />
+    <None Include="Resources\base_checkmark_32.png" />
+    <None Include="Resources\tailai.png" />
+    <None Include="Resources\xoa.png" />
+    <None Include="Resources\sua.png" />
+    <None Include="Resources\them.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cenBUS\cenBUS.csproj">
+      <Project>{26b83691-e75b-4f7c-bbb7-ec8fe75b0087}</Project>
+      <Name>cenBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cenCommon\cenCommon.csproj">
+      <Project>{d88a6d1e-8aa4-4809-a4e4-6f7a268498e2}</Project>
+      <Name>cenCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cenDAO\cenDAO.csproj">
+      <Project>{37A566C4-C102-47DA-A372-BE6E7FFDAFE4}</Project>
+      <Name>cenDAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cenDTO\cenDTO.csproj">
+      <Project>{2efdc8f5-8eb4-46f9-9991-b09cf511c248}</Project>
+      <Name>cenDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

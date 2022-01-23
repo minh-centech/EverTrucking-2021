@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="DataConnects" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="DataConnects">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="ConnectionString" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <DataConnects>
+    <ID>0</ID>
+    <Name>f1riXmPbG58=</Name>
+    <ConnectionString>lG8SeSvqtpQGY1Fgk8XiR6TB4ihUD+HI5a52+9EC0RloP1+g7Mvy/Efj1LztCrks5DWy5kskFdVXEI912MCDtaf9T9Fs8Y7+e+Ird53jr292rjHdao7wZwb+dKM3oKl3LA1yFYMxrzX7XzfO0nO/RO0EAO2ksV+t/KoVJsSs3sbkNbLmSyQV1ZTFEL6rUOwyp1uUPzhpkfxP8Zko6CuhPhQTDIgvm2ot</ConnectionString>
+  </DataConnects>
+</NewDataSet>
